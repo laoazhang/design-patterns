@@ -1,6 +1,8 @@
-package cn.laoazhang.factory;
+package cn.laoazhang.factory.ali;
 
-public class AliPay implements Pay{
+import cn.laoazhang.factory.PayFactory;
+
+public class AliPay implements PayFactory {
     @Override
     public void unifiedorder() {
 

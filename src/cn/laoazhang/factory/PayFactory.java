@@ -3,7 +3,7 @@ package cn.laoazhang.factory;
 /**
  * 支付接口
  */
-public interface Pay {
+public interface PayFactory {
 
     /**
      * 统一下单

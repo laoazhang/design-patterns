@@ -1,8 +1,8 @@
 package cn.laoazhang.factory.simple;
 
-import cn.laoazhang.factory.AliPay;
-import cn.laoazhang.factory.Pay;
-import cn.laoazhang.factory.WechatPay;
+import cn.laoazhang.factory.ali.AliPay;
+import cn.laoazhang.factory.PayFactory;
+import cn.laoazhang.factory.wechat.WechatPay;
 
 public class SimplePayFactory {
 
@@ -11,7 +11,7 @@ public class SimplePayFactory {
      * @param payType
      * @return
      */
-    public static Pay createPay(String payType) {
+    public static PayFactory createPay(String payType) {
 
         if (payType == null) {
             return null;

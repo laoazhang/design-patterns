@@ -1,10 +1,11 @@
 package cn;
 
-import cn.laoazhang.factory.Pay;
-import cn.laoazhang.factory.method.AliPayFactory;
-import cn.laoazhang.factory.method.PayFactory;
-import cn.laoazhang.factory.method.WechatPayFactory;
-import cn.laoazhang.factory.simple.SimplePayFactory;
+// import cn.laoazhang.factory.method.AliPayFactory;
+// import cn.laoazhang.factory.method.PayFactory;
+// import cn.laoazhang.factory.method.WechatPayFactory;
+
+import cn.laoazhang.factory.FactoryProducer;
+import cn.laoazhang.factory.OrderFactory;
 
 public class Main {
 
@@ -15,12 +16,17 @@ public class Main {
         // Pay pay = SimplePayFactory.createPay("ALI_PAY");
         // pay.unifiedorder();
 
-        PayFactory aliPayFactory = new AliPayFactory();
-        Pay aliPay = aliPayFactory.getPay();
-        aliPay.unifiedorder();
+        // PayFactory aliPayFactory = new AliPayFactory();
+        // Pay aliPay = aliPayFactory.getPay();
+        // aliPay.unifiedorder();
+        //
+        // PayFactory wechatPayFactory = new WechatPayFactory();
+        // Pay wechatPay = wechatPayFactory.getPay();
+        // wechatPay.unifiedorder();
 
-        PayFactory wechatPayFactory = new WechatPayFactory();
-        Pay wechatPay = wechatPayFactory.getPay();
-        wechatPay.unifiedorder();
+
+        OrderFactory orderFactory = FactoryProducer.getFactory("WECHAT");
+        orderFactory.createPay().unifiedorder();
+        orderFactory.createRefund().refund();
     }
 }
