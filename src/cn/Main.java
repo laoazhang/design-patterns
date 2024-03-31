@@ -6,6 +6,7 @@ package cn;
 
 import cn.laoazhang.factory.FactoryProducer;
 import cn.laoazhang.factory.OrderFactory;
+import cn.laoazhang.prototype.Person;
 
 public class Main {
 
@@ -25,8 +26,11 @@ public class Main {
         // wechatPay.unifiedorder();
 
 
-        OrderFactory orderFactory = FactoryProducer.getFactory("WECHAT");
-        orderFactory.createPay().unifiedorder();
-        orderFactory.createRefund().refund();
+        // OrderFactory orderFactory = FactoryProducer.getFactory("WECHAT");
+        // orderFactory.createPay().unifiedorder();
+        // orderFactory.createRefund().refund();
+
+
+
     }
 }
