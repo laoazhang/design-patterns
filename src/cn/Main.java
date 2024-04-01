@@ -4,6 +4,10 @@ package cn;
 // import cn.laoazhang.factory.method.PayFactory;
 // import cn.laoazhang.factory.method.WechatPayFactory;
 
+import cn.laoazhang.builder.Computer;
+import cn.laoazhang.builder.Director;
+import cn.laoazhang.builder.HighComputerBuilder;
+import cn.laoazhang.builder.LowComputerBuilder;
 import cn.laoazhang.factory.FactoryProducer;
 import cn.laoazhang.factory.OrderFactory;
 import cn.laoazhang.prototype.Person;
@@ -30,6 +34,14 @@ public class Main {
         // orderFactory.createPay().unifiedorder();
         // orderFactory.createRefund().refund();
 
+
+        Director director = new Director();
+
+        Computer lowComputer = director.create(new LowComputerBuilder());
+        Computer highComputer = director.create(new HighComputerBuilder());
+
+        System.out.println(lowComputer.toString());
+        System.out.println(highComputer.toString());
 
 
     }
