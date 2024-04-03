@@ -6,6 +6,7 @@ package cn;
 
 import cn.laoazhang.adapter.cls.Adapter;
 import cn.laoazhang.adapter.cls.TargetModule;
+import cn.laoazhang.bridge.*;
 import cn.laoazhang.builder.Computer;
 import cn.laoazhang.builder.Director;
 import cn.laoazhang.builder.HighComputerBuilder;
@@ -45,13 +46,20 @@ public class Main {
         // System.out.println(lowComputer.toString());
         // System.out.println(highComputer.toString());
 
-        TargetModule targetModule = new Adapter();
+        // TargetModule targetModule = new Adapter();
+        //
+        // targetModule.methodA();
+        //
+        // targetModule.methodB();
+        //
+        // targetModule.methodC();
 
-        targetModule.methodA();
+        HWPhone blueHwPhone = new HWPhone(new BlueColor());
+        // blueHwPhone.run();
+        HWPhone priceHwPhone = new HWPhone(new BlueColor(),new HwPrice());
+        priceHwPhone.run();
 
-        targetModule.methodB();
-
-        targetModule.methodC();
-
+        ApplePhone applePhone = new ApplePhone(new RedColor());
+        // applePhone.run();
     }
 }
