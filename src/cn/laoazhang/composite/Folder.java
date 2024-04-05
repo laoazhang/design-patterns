@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 具体的文件夹，里面可以添加子文件或者文件
  * @Author laoazhang
  * @CreateTime 2024/4/5 23:37
  * @Version 1.0

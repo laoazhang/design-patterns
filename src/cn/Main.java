@@ -11,6 +11,9 @@ import cn.laoazhang.builder.Computer;
 import cn.laoazhang.builder.Director;
 import cn.laoazhang.builder.HighComputerBuilder;
 import cn.laoazhang.builder.LowComputerBuilder;
+import cn.laoazhang.composite.File;
+import cn.laoazhang.composite.Folder;
+import cn.laoazhang.composite.Root;
 import cn.laoazhang.factory.FactoryProducer;
 import cn.laoazhang.factory.OrderFactory;
 import cn.laoazhang.prototype.Person;
@@ -54,12 +57,36 @@ public class Main {
         //
         // targetModule.methodC();
 
-        HWPhone blueHwPhone = new HWPhone(new BlueColor());
+        // HWPhone blueHwPhone = new HWPhone(new BlueColor());
         // blueHwPhone.run();
-        HWPhone priceHwPhone = new HWPhone(new BlueColor(),new HwPrice());
-        priceHwPhone.run();
-
-        ApplePhone applePhone = new ApplePhone(new RedColor());
+        // HWPhone priceHwPhone = new HWPhone(new BlueColor(),new HwPrice());
+        // priceHwPhone.run();
+        //
+        // ApplePhone applePhone = new ApplePhone(new RedColor());
         // applePhone.run();
+
+        // 创造根文件夹
+        Root root1 = new Folder("C://");
+        // 建立子文件夹
+        Root desktop = new Folder("桌面");
+
+        Root myComputer = new Folder("我的电脑");
+
+        // 建立子文件
+        Root javaFile = new File("HelloWorld.java");
+
+        //建立文件夹关系
+        root1.addFile(desktop);
+        root1.addFile(myComputer);
+
+        //建立文件关系
+        myComputer.addFile(javaFile);
+
+        //从0级开始展示，每下一级，多2条橫线
+        root1.display(0);
+
+        // 另外一个根
+        Root root2 = new Folder("D://");
+        root2.display(0);
     }
 }
