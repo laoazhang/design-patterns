@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>cn.laoazhang</groupId>
-    <artifactId>factory-pattern</artifactId>
+    <artifactId>chain-of-responsibility-pattern</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
